@@ -1,0 +1,20 @@
+{
+    "name": "cynter/funcollection",
+    "description": "Set of functional collections inspired by Scala",
+    "type": "library",
+    "require": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cynter\\Funcollection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Václav Král",
+            "email": "kralva10@fit.cvut.cz"
+        }
+    ]
+}
