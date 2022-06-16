@@ -134,7 +134,7 @@ interface Funcollection extends Iterator
 	 * The rest of the collection without its first element.
 	 * @return Funcollection the rest of the collection without its first element.
 	 */
-	public function tail(): ?Funcollection;
+	public function tail(): Funcollection;
 
 	/**
 	 * Convert collection to array.

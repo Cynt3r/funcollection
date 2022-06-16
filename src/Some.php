@@ -143,9 +143,9 @@ class Some extends Option
 		return 1;
 	}
 
-	public function tail(): ?Option
+	public function tail(): Option
 	{
-		return null;
+		return new None();
 	}
 
 	public function toArray(): array
@@ -161,6 +161,9 @@ class Some extends Option
 			return new Some([$this->val, $that->head()]);
 		}
 	}
+
+
+	//== Option methods
 
 	public function get()
 	{

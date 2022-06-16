@@ -16,5 +16,10 @@
             "name": "Václav Král",
             "email": "kralva10@fit.cvut.cz"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }

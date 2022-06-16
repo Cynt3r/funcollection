@@ -32,7 +32,7 @@ class None extends Option
 
 	public function rewind(): void {}
 
-	//== sc_collection methods
+	//== Funcollection methods
 
 	public function contains($el, bool $type_strict = false): bool
 	{
@@ -122,9 +122,12 @@ class None extends Option
 		return 0;
 	}
 
-	public function tail(): ?Option
+	/**
+	 * @throws Exception always
+	 */
+	public function tail(): Option
 	{
-		return null;
+		throw new Exception("Tail on None");
 	}
 
 	public function toArray(): array
@@ -138,7 +141,7 @@ class None extends Option
 	}
 
 
-	//== Funcollection methods
+	//== Option methods
 
 	/**
 	 * @throws Exception accessed the value of sc_none.

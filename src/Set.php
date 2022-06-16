@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Cynter\Funcollection;
 
+use Exception;
+
 /** Represents a set of unique values. */
 class Set implements Funcollection
 {
@@ -179,10 +181,13 @@ class Set implements Funcollection
 		return count($this->val);
 	}
 
-	public function tail(): ?Set
+	/**
+	 * @throws Exception when used on empty Set
+	 */
+	public function tail(): Set
 	{
 		if ($this->isEmpty()) {
-			return null;
+			throw new Exception("Tail on empty Set");
 		} else {
 			return new Set(array_slice($this->val, 1));
 		}

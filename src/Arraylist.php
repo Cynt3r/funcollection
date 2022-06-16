@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Cynter\Funcollection;
 
+use Exception;
+
 class Arraylist implements Funcollection
 {
 	/** @var array<int, mixed> underlying array */
@@ -178,10 +180,13 @@ class Arraylist implements Funcollection
 		return count($this->val);
 	}
 
-	public function tail(): ?Arraylist
+	/**
+	 * @throws Exception when used on empty Set
+	 */
+	public function tail(): Arraylist
 	{
 		if ($this->isEmpty()) {
-			return null;
+			throw new Exception("Tail on empty Arraylist");
 		} else {
 			return new Arraylist(array_slice($this->val, 1));
 		}
